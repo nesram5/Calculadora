@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.marco {
+    display: flex;
+    background-color: #a8a7a7;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.calculadora {
+    margin-right: 20px;
+}
+
+.pantalla {
+    background-color: rgb(88, 228, 84);
+    margin-bottom: 20px;
+}
+
+.pantalla input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 4px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.arreglo_botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.arreglo_total {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.numero {
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.operador {
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #888585;
+    font-size: larger;
+    color: #f0f0f0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+.tecla_borrar {
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #f02020;
+    font-size: larger;
+    color: #f0f0f0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.historial {
+    width: auto;
+    text-align: center;
+}
+
+.historial h2 {
+    margin: 0 0 10px 0;
+}
+
+.historial ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.historial ul li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+footer {
+    align-self:last baseline;
+    text-align: left;
+    font-size: x-small;
+}
+

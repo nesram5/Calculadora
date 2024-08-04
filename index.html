@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="resources/css/main.css">
+</head>
+<body>
+    <div class="marco">
+        <div class="calculadora">
+            <div class="pantalla">
+                <input type="text" id="result" disabled>
+            </div>
+            <div class="arreglo_botones">
+                <button class="numero" onclick="seleccionar_numero('7')">7</button>
+                <button class="numero" onclick="seleccionar_numero('8')">8</button>
+                <button class="numero" onclick="seleccionar_numero('9')">9</button>
+                <button class="operador" onclick="seleccionar_operacion('/')">/</button>
+                <button class="numero" onclick="seleccionar_numero('4')">4</button>
+                <button class="numero" onclick="seleccionar_numero('5')">5</button>
+                <button class="numero" onclick="seleccionar_numero('6')">6</button>
+                <button class="operador" onclick="seleccionar_operacion('*')">x</button>
+                <button class="numero" onclick="seleccionar_numero('1')">1</button>
+                <button class="numero" onclick="seleccionar_numero('2')">2</button>
+                <button class="numero" onclick="seleccionar_numero('3')">3</button>
+                <button class="operador" onclick="seleccionar_operacion('-')">-</button>
+                <button class="numero" onclick="seleccionar_numero('0')">0</button>
+                <button class="numero" onclick="seleccionar_numero('.')">.</button>
+                <button class="tecla_borrar" onclick="borrar_pantalla()">C</button>                
+                <button class="operador" onclick="seleccionar_operacion('+')">+</button>
+            </div>
+            <div class="arreglo_total">
+               <button class="numero" onclick="calcular()">=</button>
+            </div>
+           
+        </div>
+        
+        <div class="historial">
+            <h3>Historial</h3>
+            <ul id="lista-historial"></ul>
+        </div>
+        
+    </div>
+    <script src="resources/js/main.js"></script>
+</body>
+
+<footer>Programado por Nestor Ramirez</footer>
+</html>
