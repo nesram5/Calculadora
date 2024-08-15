@@ -13,25 +13,25 @@
                 <input type="text" id="result" disabled>
             </div>
             <div class="arreglo_botones">
-                <button class="numero" onclick="seleccionar_numero('7')">7</button>
-                <button class="numero" onclick="seleccionar_numero('8')">8</button>
-                <button class="numero" onclick="seleccionar_numero('9')">9</button>
-                <button class="operador" onclick="seleccionar_operacion('/')">/</button>
-                <button class="numero" onclick="seleccionar_numero('4')">4</button>
-                <button class="numero" onclick="seleccionar_numero('5')">5</button>
-                <button class="numero" onclick="seleccionar_numero('6')">6</button>
-                <button class="operador" onclick="seleccionar_operacion('*')">x</button>
-                <button class="numero" onclick="seleccionar_numero('1')">1</button>
-                <button class="numero" onclick="seleccionar_numero('2')">2</button>
-                <button class="numero" onclick="seleccionar_numero('3')">3</button>
-                <button class="operador" onclick="seleccionar_operacion('-')">-</button>
-                <button class="numero" onclick="seleccionar_numero('0')">0</button>
-                <button class="numero" onclick="seleccionar_numero('.')">.</button>
-                <button class="tecla_borrar" onclick="borrar_pantalla()">C</button>                
-                <button class="operador" onclick="seleccionar_operacion('+')">+</button>
+                <button data="CalcBtn" class="number">7</button>
+                <button data="CalcBtn" class="number">8</button>
+                <button data="CalcBtn" class="number">9</button>
+                <button data="CalcBtn" class="operator">/</button>
+                <button data="CalcBtn" class="number">4</button>
+                <button data="CalcBtn" class="number">5</button>
+                <button data="CalcBtn" class="number">6</button>
+                <button data="CalcBtn" class="operator">x</button>
+                <button data="CalcBtn" class="number">1</button>
+                <button data="CalcBtn" class="number">2</button>
+                <button data="CalcBtn" class="number">3</button>
+                <button data="CalcBtn" class="operator">-</button>
+                <button data="CalcBtn" class="number">0</button>
+                <button data="CalcBtn" class="number">.</button>
+                <button data="CalcBtn" class="del">C</button>                
+                <button data="CalcBtn" class="operator">+</button>
             </div>
-            <div class="arreglo_total">
-               <button class="numero" onclick="calcular()">=</button>
+            <div data="CalcBtn" class="arreglo_total">
+               <button  class="result">=</button>
             </div>
            
         </div>
@@ -42,8 +42,9 @@
         </div>
         
     </div>
-    <script src="resources/js/main.js"></script>
+    
 </body>
 
 <footer>Programado por Nestor Ramirez</footer>
 </html>
+<script src="resources/js/main.js"></script>
