@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-.marco {
+.calculator {
     display: flex;
     background-color: #a8a7a7;
     border-radius: 8px;
@@ -16,16 +16,16 @@ body {
     padding: 20px;
 }
 
-.calculadora {
+.calculatorFrame {
     margin-right: 20px;
 }
 
-.pantalla {
+.display {
     background-color: rgb(88, 228, 84);
     margin-bottom: 20px;
 }
 
-.pantalla input {
+.display input {
     width: 100%;
     padding: 10px;
     font-size: 1.5em;
@@ -35,27 +35,10 @@ body {
     box-sizing: border-box;
 }
 
-.arreglo_botones {
+.calculatorButtons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-}
-
-.arreglo_total {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-}
-.result {
-    padding: 20px;
-    font-size: 1.2em;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .number {
@@ -68,6 +51,7 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .operator {
     padding: 10px;
     font-size: 1.2em;
@@ -85,7 +69,25 @@ button:hover {
     background-color: #e0e0e0;
 }
 
-.delete {
+.resultFrame {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.result {
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.del {
     padding: 20px;
     font-size: 1.2em;
     border-radius: 20px;
@@ -97,16 +99,17 @@ button:hover {
     transition: background-color 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.historial {
+
+.history {
     width: auto;
     text-align: center;
 }
 
-.historial h2 {
+.history h3 {
     margin: 0 0 10px 0;
 }
 
-.historial ul {
+.history ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -114,7 +117,7 @@ button:hover {
     overflow-y: auto;
 }
 
-.historial ul li {
+.history ul li {
     background-color: #ffffff;
     padding: 10px;
     margin-bottom: 5px;

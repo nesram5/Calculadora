@@ -7,38 +7,39 @@
     <link rel="stylesheet" href="resources/css/main.css">
 </head>
 <body>
-    <div class="marco">
-        <div class="calculadora">
-            <div class="pantalla">
-                <input type="text" id="result" disabled>
+    <div class="calculator">
+        <div class="calculatorFrame">
+            <div class="display">
+                <input title="calculator" type="text" id="result" disabled>
             </div>
-            <div class="arreglo_botones">
-                <button data="CalcBtn" class="number">7</button>
-                <button data="CalcBtn" class="number">8</button>
-                <button data="CalcBtn" class="number">9</button>
-                <button data="CalcBtn" class="operator">/</button>
-                <button data="CalcBtn" class="number">4</button>
-                <button data="CalcBtn" class="number">5</button>
-                <button data="CalcBtn" class="number">6</button>
-                <button data="CalcBtn" class="operator">x</button>
-                <button data="CalcBtn" class="number">1</button>
-                <button data="CalcBtn" class="number">2</button>
-                <button data="CalcBtn" class="number">3</button>
-                <button data="CalcBtn" class="operator">-</button>
-                <button data="CalcBtn" class="number">0</button>
-                <button data="CalcBtn" class="number">.</button>
-                <button data="CalcBtn" class="del">C</button>                
-                <button data="CalcBtn" class="operator">+</button>
+            <div class="calculatorButtons">
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="operator">/</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="operator">x</button>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="operator">-</button>
+                <button class="number">0</button>
+                <button class="number">.</button>
+                <button class="del">C</button>                
+                <button class="operator">+</button>
             </div>
-            <div data="CalcBtn" class="arreglo_total">
+            <div class="resultFrame">
                <button  class="result">=</button>
             </div>
            
         </div>
         
-        <div class="historial">
+        <div class="history">
             <h3>Historial</h3>
-            <ul id="lista-historial"></ul>
+            <ul id="historyList"></ul>
+            <button>Limpiar Historial</button>
         </div>
         
     </div>
