@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "target": "es6",  // Especifica la versión de JavaScript que se generará
+      "module": "commonjs",  // Define el sistema de módulos
+      "outDir": "./dist",  // Directorio donde se generarán los archivos JavaScript
+      "strict": true,  // Habilita verificaciones estrictas
+      "esModuleInterop": true,  // Habilita la interoperabilidad entre CommonJS y ES Modules
+      "forceConsistentCasingInFileNames": true  // Fuerza consistencia en el uso de mayúsculas en los nombres de archivos
+    }
+}

@@ -1,2 +1,6 @@
-# Calculadora
- Calculadora hecha con HTML JS y CSS
+# Calculator
+===========
+
+Calculator app using Typescript, CSS and HTML
+
+Compiled using tsc
