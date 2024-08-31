@@ -1,90 +1,97 @@
-//Object Calculator
-const Calculator = {
-    current: '',
-    previous: '',
-    operator: '',
-    display: document.getElementById('result'),    
-    buttons: document.querySelectorAll('button'),
-
-    handleButtonClick: (element) => {
-        const value = element.innerHTML;
-        
-        if (value === 'Limpiar Historial'){
-                Calculator.clearHistory();
-        }
-        else if(element.classList.contains('number') ) {
-                Calculator.current += value;
-                Calculator.updateDisplay();
-        }
-        else if(value === '=') {     
-                if (Calculator.previous && Calculator.operator && Calculator.current){
-                    let prev = Calculator.current;
-                    Calculator.current = Calculator.handleOperation();
-                    let result = Calculator.current;
-                    Calculator.addToHistory(prev,result);
-                    Calculator.updateDisplay();
-                }
-        }
-        else if(value === 'C'){
-                Calculator.clearAll();
-        }
-        else {
-            Calculator.prepareOperation(element);
-        }
-          
-     },
-
-    handleOperation: () => {
-        if (Calculator.previous != '' && Calculator.operator != '' && Calculator.current != ''){
-            const prev = parseFloat(Calculator.previous);
-            const curr = parseFloat(Calculator.current);
-            switch (Calculator.operator) {
-                case '+': return prev + curr;
-                case '-': return prev - curr;
-                case 'x': return prev * curr;
-                case '/': return curr !== 0 ? prev / curr : 'Error';
-                default: return curr;
-            } 
-        }           
-    },
-
-    prepareOperation: (element) => {
-        if (Calculator.current != ''){
-            Calculator.previous = Calculator.current;
-        };
-        Calculator.current = '';
-        Calculator.operator = element.innerHTML;        
-    },
-
-    updateDisplay: () => {
-        Calculator.display.value = Calculator.current;
-    },
-
-    clearAll: () => {
-        Calculator.current = '';
-        Calculator.operator = '';
-        Calculator.previous= '';
-        Calculator.updateDisplay();
-    },
-
-    addToHistory: (prev, result) => {
-        let historyList = document.getElementById('historyList');
-        const li = document.createElement('li');    
-        li.textContent = `${Calculator.previous} ${Calculator.operator} ${prev} = ${result}` ;
-        historyList.appendChild(li);
-        
-    },
-
-    clearHistory: () => { 
-        const lista_historial = document.getElementById('historyList');
-        while (lista_historial.firstChild) {
-            lista_historial.removeChild(lista_historial.firstChild);
-        }
+var Calculator = /** @class */ (function () {
+    function Calculator() {
+        this.current = '';
+        this.previous = '';
+        this.operator = '';
+        this.bttnNumber = document.querySelectorAll('.number');
+        this.operatorBttn = document.querySelectorAll('.operator');
+        this.display = document.getElementById('result');
+        this.clearHistoryBttn = document.querySelectorAll('.clearHistory');
+        this.historyList = document.getElementById('historyList');
+        this.resultBttn = document.querySelectorAll('.resultBttn');
+        this.deleteAll = document.querySelectorAll('.deleteAll');
     }
-
-};
-
-//Run the object
-Calculator.buttons.forEach(button => {
-    button.addEventListener('click', () => Calculator.handleButtonClick(button));
-});
+    Calculator.prototype.handleButtonClick = function () {
+        var _this = this;
+        this.clearHistoryBttn.forEach(function (button) {
+            button.addEventListener('click', function () { return _this.clearHistory(); });
+        });
+        this.resultBttn.forEach(function (button) {
+            button.addEventListener('click', function () {
+                if (isNaN(Number(_this.previous)) || _this.operator === '' || isNaN(Number(_this.current)))
+                    return;
+                if (_this.previous === '' || _this.current === '')
+                    return;
+                var prev = _this.current;
+                _this.current = _this.handleOperation();
+                var result = _this.current;
+                _this.addToHistory(prev, result);
+                _this.updateDisplay();
+            });
+        });
+        this.deleteAll.forEach(function (button) {
+            button.addEventListener('click', function () { return _this.clearAll(); });
+        });
+        this.operatorBttn.forEach(function (button) {
+            button.addEventListener('click', function () {
+                _this.operator = (button.innerHTML);
+                _this.prepareOperation();
+            });
+        });
+        this.bttnNumber.forEach(function (button) {
+            button.addEventListener('click', function () {
+                _this.current += button.innerHTML;
+                _this.updateDisplay();
+            });
+        });
+    };
+    Calculator.prototype.handleOperation = function () {
+        var operations = {
+            '+': function (a, b) { return a + b; },
+            '-': function (a, b) { return a - b; },
+            'x': function (a, b) { return a * b; },
+            '/': function (a, b) { return b !== 0 ? a / b : 'Error'; }
+        };
+        if (this.previous === '' && this.operator === '' && this.current === '')
+            return this.current;
+        var prev = parseFloat(this.previous);
+        var curr = parseFloat(this.current);
+        var operation = operations[this.operator];
+        return operation ? operation(prev, curr).toString() : curr.toString();
+    };
+    Calculator.prototype.prepareOperation = function () {
+        if (this.current !== '' || isNaN(Number(this.current))) {
+            this.previous = this.current;
+        }
+        this.current = '';
+    };
+    Calculator.prototype.updateDisplay = function () {
+        if (this.display) {
+            this.display.value = this.current;
+        }
+    };
+    Calculator.prototype.clearAll = function () {
+        this.current = '';
+        this.operator = '';
+        this.previous = '';
+        this.updateDisplay();
+    };
+    Calculator.prototype.addToHistory = function (prev, result) {
+        if (this.historyList) {
+            var li = document.createElement('li');
+            li.textContent = "".concat(this.previous, " ").concat(this.operator, " ").concat(prev, " = ").concat(result);
+            this.historyList.appendChild(li);
+        }
+    };
+    Calculator.prototype.clearHistory = function () {
+        if (this.historyList) {
+            while (this.historyList.firstChild) {
+                this.historyList.removeChild(this.historyList.firstChild);
+            }
+        }
+    };
+    return Calculator;
+}());
+// Run the object
+var calc = new Calculator();
+calc.handleButtonClick();
